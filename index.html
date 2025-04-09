@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Kiểm tra</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0 10px;
+            padding: 0;
+            font-size: large;
+        }
+        .nav{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows:60px;
+        }
+        .menu{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;   
+        }
+        .menu a{
+            text-decoration: none;
+            color: black;
+        }
+        .logo img{
+            margin-top: 5px;
+            width: 100%;
+            height: 100%;    
+            object-fit: contain;
+            display: flex;
+            align-items: center;
+        }
+        .tk{
+           display: flex;
+           align-items: center;
+        }
+        .tk input{
+             padding: 5px 10px;
+            border: 1px;
+            border-radius: 5px
+        }
+        .anhdaidien img{
+            width: 100%;
+        }
+        .gt h1{
+            text-align: center;
+        }
+        .khungsp{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-bottom: 40px;
+            overflow-y: scroll;
+        }
+        .sp{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .sp img{
+            width: 100%;
+            height: 400px;
+            object-fit: contain; 
+        }
+        .button{
+         background-color: #ACD3A8;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        margin: 5px;
+        padding: 10px 30px;
+        font-size: 14px;
+        }
+        .chan{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;   
+        }
+        .chan p{
+            color: blue;
+            font-weight: bold;
+        }
+        .footer{
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px  solid black;
+        }
+        .footer p{
+            font-style: italic;
+            color: black;
+        }
+        .anhdaidien img{
+            width: 100%;
+            border-top-left-radius:150px;
+            border-bottom-right-radius: 150px;
+        }
+        .hamburget {
+            display: none;
+            cursor: pointer;
+        }
+        #check {
+            display: none;
+        }
+        @media (max-width:1200px){
+            .menu{
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                align-items:flex-start  ;
+                z-index: 100;
+                font-size: 16px;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background-color:cadetblue ;
+            }
+            .menu a{
+                margin-left: 80px;
+                margin-bottom: 10px;
+                margin-top: 18px;
+                font-size: 10px;
+            }
+            .timkiem{
+                display: none;
+            }
+            .nav{
+                display: grid;
+                grid-template-areas: "hamburget logo";
+                grid-template-columns:  1fr 1fr;
+                grid-template-rows: auto;
+                text-align: center;
+            }
+            .menu {display: none;}
+            #check:checked ~ .menu {
+                display: flex;
+            }
+            .hamburget{
+                display: grid;
+                grid-area:hamburget;
+                display: block;
+                font-size: 40px;
+                font-weight: bold;
+                cursor: pointer;
+                padding-top: 60px;
+                padding-top: 20px;
+                 margin-top: 20px;
+            }
+            .logo{
+                display: grid;
+                grid-area:logo;
+                z-index: 10002;
+            }
+            .anhdaidien{
+            display: none;
+             }
+        .tk{
+            display: none;
+        }
+        .khungsp{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow-y: scroll;
+        }
+        .gt{
+            font-size: 16px;
+        }
+        p{font-size: 14px;}
+        }
+        @media(max-width:600px){
+        .menu{
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                align-items:flex-start  ;
+                z-index: 100;
+                font-size: 14px;
+                position: absolute;
+                top: 80px;
+                left: 0;
+            }
+            .menu a{
+                margin-left: 80px;
+                margin-bottom: 10px;
+                margin-top: 15px;
+                font-size: 10px;
+            }
+            .timkiem{
+                display: none;
+            }
+            .nav{
+                display: grid;
+                grid-template-areas: "hamburget logo";
+                grid-template-columns:  1fr 1fr;
+                grid-template-rows: auto;
+                text-align: center;
+            }
+            .menu {display: none;}
+            #check:checked ~ .menu {
+                display: flex;
+            }
+            .hamburget{
+                display: grid;
+                grid-area:hamburget;
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                padding-top: 60px;
+                padding-top: 20px;
+                 margin-top: 20px;
+                 font-weight: bold;
+            }
+            .logo{
+                display: grid;
+                grid-area:logo;
+                z-index: 10002;
+            }
+            .anhdaidien{
+            display: none;
+             }
+        .tk{
+            display: none;
+        }
+        .khungsp{
+            display: grid;
+            grid-template-columns: 1fr;
+            overflow-y: scroll;
+        }
+        .gt{
+            font-size: 14px;
+        }
+        p{font-size: 12px;}
+    }  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <input type="checkbox" id="check">
+             <label for="check" class="hamburget">&#9776;</label> 
+            <div class="menu">
+                     <a href="#">NỮ</a>
+                <a href="#">NAM</a>
+                <a href="#" class="highlight">CÁC SỰ KIỆN THIÊN VĂN</a>
+                <a href="#">BỘ SƯU TẬP</a>
+                <a href="#">VỀ CHÚNG TÔI</a>
+            </div>
+            <div class="logo">
+                <img src="./logo.jpg" alt=""></div>
+            <div class="tk">
+                <input type="text" placeholder="tìm kiếm" size="30">
+                <button style="font-size: 18px;"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="anhdaidien">
+            <img src="./bau troi.jpg">
+        </div>
+        <div class="gt">
+            <h1>NEW ARRIVAL</h1>
+        </div>
+        <div class="khungsp">
+            <div class="sp">
+                <img src="./anh1.jpg">
+                <p>Quadrantids</p>
+                <div class="chan">
+                    <p>Đầu tháng 1</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+            <div class="sp">
+                <img src="./anh2.jpg">
+                <p>Lyrids</p>
+                <div class="chan">
+                    <p>Đầu tháng 4</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+
+            <div class="sp">
+                <img src="./anh3.jpg">
+                <p>Pi Puppids</p>
+                <div class="chan">
+                    <p>Giữa tháng 12</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+            <div class="sp">
+                <img src="./anh4.jpg">
+                <p>Eta Aquariids</p>
+                <div class="chan">
+                    <p>Đầu tháng 5</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+         </div>
+         <div class="gt">
+            <h1>Các sự kiện web hỗ trợ</h1>
+        </div>
+        <div class="khungsp">
+            <div class="sp">
+                <img src="./anh5.jpg">
+                <p>June Bootids </p>
+                <div class="chan">
+                    <p>Cuối tháng 6</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+            <div class="sp">
+                <img src="./anh1.jpg">
+                <p>Perseids</p>
+                <div class="chan">
+                    <p>Giữa tháng 8</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+            <div class="sp">
+                <img src="anh2.jpg">
+                <p>Aurigids</p>
+                <div class="chan">
+                    <p>Đầu tháng 9</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+            <div class="sp">
+                <img src="anh3.jpg">
+                <p>Giacobinids</p>
+                <div class="chan">
+                    <p>Đầu tháng 10</p>
+                    <div class="button">Live</div>
+                </div>
+            </div>
+         </div>
+         <div class="anhdaidien">
+            <img src="./bau troi.jpg">
+        </div>
+        <div class="footer">
+            <p>Họ tên:Đỗ Minh Nguyệt </p>
+            <p>Lớp: TUDD2024</p>
+            <p> Khoa: Toán Ứng Dụng</p>
+        </div>
+    </div>
+</body>
+</html>
